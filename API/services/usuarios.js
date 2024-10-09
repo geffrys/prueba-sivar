@@ -14,7 +14,7 @@ const updateUsuario = async (id, usuario) => {
     return await usuarioDB.updateUsuario(id, usuario);
 };
 const deleteUsuario = async(id) => {
-    return await usuarioDB.deleteUsuario(id).then((result) => result);
+    return await usuarioDB.deleteUsuario(id);
 };
 
 
