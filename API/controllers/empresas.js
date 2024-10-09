@@ -15,8 +15,15 @@ empresas.get('/:id',async (req,res)=>{
 })
 // POST /api/empresas - Crea una nueva empresa
 empresas.post('',async (req,res)=>{
+    try{
     const empresa = await empresaService.createEmpresa(req.body);
-    res.status(200).send(await empresa);
+    res.status(200).send(await empresa);}
+    catch(e){
+        res.status(400).send({
+            message: e.message,
+            code: 400
+        });
+    }
 })
 // PUT /api/empresas/:id - Actualiza una empresa en especifico
 empresas.put('/:id',async (req,res)=>{
