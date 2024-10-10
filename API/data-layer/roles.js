@@ -68,3 +68,11 @@ const deleteRol = (id) => {
         });
     });
 }
+
+export default {
+    getRoles,
+    getRolById,
+    createRol,
+    updateRol,
+    deleteRol
+}

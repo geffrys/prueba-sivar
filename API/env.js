@@ -1,7 +1,7 @@
 const PORT = 3000;
 const HOST = 'localhost';
 const USER = 'root';
-const PASSWORD = '2153';
+const PASSWORD = 'admin';
 const DATABASE = 'pruebatecnica';
 
 export default {

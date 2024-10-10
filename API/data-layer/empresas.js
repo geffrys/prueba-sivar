@@ -45,7 +45,7 @@ const updateEmpresa = (id, empresa) => {
         connection.query('UPDATE empresa SET nombre_empresa = ?, nit_empresa = ? WHERE id = ?', 
             [
                 empresa.nombre_empresa,
-                empresa.direccion_empresa,
+                empresa.nit_empresa,
                 id
             ], (err, result) => {
             if (err) {

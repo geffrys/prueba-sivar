@@ -1,4 +1,6 @@
 import empresasDb from '../data-layer/empresas.js';
+import empresaPuntoVentaDb from '../data-layer/empresapuntoventa.js';
+
 
 const getEmpresas = async () => {
     let empresas = await empresasDb.getEmpresas();
@@ -17,10 +19,34 @@ const deleteEmpresa = async (id) => {
     return await empresasDb.deleteEmpresa(id);
 }
 
+
+const asociarPuntoVenta = async (idEmpresa, idPuntoVenta) => {
+    return await empresaPuntoVentaDb.createEmpresaPuntoVenta({id_empresa: idEmpresa, id_punto_venta: idPuntoVenta});
+}
+const desasociarPuntoVenta = async (idEmpresa, idPuntoVenta) => {
+    return await empresaPuntoVentaDb.deleteEmpresaPuntoVenta(idPuntoVenta, idEmpresa);
+}
+const getEmpresaPuntoVenta = async (id) => {
+    return await empresaPuntoVentaDb.getEmpresaPuntoVentaById(id);
+}
+const updateEmpresaPuntoVenta = async (id, empresaPuntoVenta) => {
+    return await empresaPuntoVentaDb.updateEmpresaPuntoVenta(id, empresaPuntoVenta);
+}
+
+
+
+
+
+
+
 export default {
     getEmpresas,
     getEmpresaById,
     createEmpresa,
     updateEmpresa,
-    deleteEmpresa
+    deleteEmpresa,
+    asociarPuntoVenta,
+    desasociarPuntoVenta,
+    getEmpresaPuntoVenta,
+    updateEmpresaPuntoVenta
 };

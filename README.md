@@ -3,6 +3,13 @@
 Se requiere crear una relación entre tablas, donde requiero tener usuarios (con información basica del usuario), y que cada usuario pueda tener una o multiples Empresas (información basica de empresa, nombre, nit) y para cada empresa el usuario va a tener un rol especifico. Por cada empresa tener puntos de venta(informacion de direccion, y nombre).
 Considerar que cada empresa puede tener asociado varios usuarios y cada Punto de venta puede estar asociado a varias empresas y no se deben repetir las empresas ni los puntos de venta en las tablas.
 
+# Instalación
+
+- npm install
+- Modificar los datos en el archivo de configuracion env.js, con los datos de la base de datos.
+- Crear el schema con el nombre que se definio en el archivo de configuracion.
+- npm start (para correr el servidor)
+
 # Definicion de tablas
 
 ![alt text](./Assets/DiagramaBaseDatos.png)
@@ -28,3 +35,10 @@ Se opto por una arquitectura de 3 capas dada su simplicidad y rapides de impleme
 
 # Detalles de implementación
 - No se uso un ORM como sequelize, se opto por usar el modulo mysql2 para la conexión a la base de datos, mas que nada por temas de tiempo.
+- Falto contenerizar la aplicacion.
+
+
+# Tecnologias usadas
+- Node.js
+- Express
+- MySQL

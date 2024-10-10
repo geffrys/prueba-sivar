@@ -15,7 +15,7 @@ const getEmpresaPuntoVenta = () => {
 
 const getEmpresaPuntoVentaById = (id) => {
     return new Promise((resolve, reject) => {
-        connection.query('SELECT * FROM empresa_punto_venta WHERE id = ? AND activo = 1 INNER JOIN empresa ON empresa_punto_venta.id_empresa = empresa.id INNER JOIN punto_venta ON empresa_punto_venta.id_punto_venta = punto_venta.id', [id], (err, rows) => {
+        connection.query('SELECT * FROM empresa_punto_venta  INNER JOIN empresa ON empresa_punto_venta.id_empresa = empresa.id INNER JOIN punto_venta ON empresa_punto_venta.id_punto_venta = punto_venta.id WHERE id_empresa = ? AND empresa_punto_venta.activo = 1', [id], (err, rows) => {
             if (err) {
                 reject(err);
                 return;
@@ -61,11 +61,12 @@ const updateEmpresaPuntoVenta = (id, empresapuntoventa) => {
     );
 }
 
-const deleteEmpresaPuntoVenta = (id) => {
+const deleteEmpresaPuntoVenta = (id_punto_venta, id_empresa) => {
     return new Promise((resolve, reject) => {
-        connection.query('UPDATE empresa_punto_venta SET activo = ? WHERE id = ?', [
+        connection.query('UPDATE empresa_punto_venta SET activo = ? WHERE id_punto_venta = ? AND id_empresa = ?', [
             0,
-            id
+            id_punto_venta,
+            id_empresa
         ], (err, result) => {
             if (err) {
                 reject(err);
