@@ -2,7 +2,7 @@ import connection from "./db.js";
 
 const getRolesUsuarioEmpresa = () => {
     return new Promise((resolve, reject) => {
-        connection.query('SELECT * FROM rol_usuario_empresa WHERE activo = 1 INNER JOIN rol ON roles_usuario_empresa.id_rol = rol.id INNER JOIN usuario ON roles_usuario_empresa.id_usuario = usuario.id INNER JOIN empresa ON roles_usuario_empresa.id_empresa = empresa.id ', (err, rows) => {
+        connection.query('SELECT * FROM rol_usuario_empresa  INNER JOIN rol ON rol_usuario_empresa.id_rol = rol.id INNER JOIN usuario ON rol_usuario_empresa.id_usuario = usuario.id INNER JOIN empresa ON rol_usuario_empresa.id_empresa = empresa.id WHERE rol_usuario_empresa.activo = 1 ', (err, rows) => {
             if (err) {
                 reject(err);
                 return;
