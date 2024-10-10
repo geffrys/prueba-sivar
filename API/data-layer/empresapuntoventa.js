@@ -75,3 +75,12 @@ const deleteEmpresaPuntoVenta = (id) => {
         });
     });
 }
+
+
+export default {
+    getEmpresaPuntoVenta,
+    getEmpresaPuntoVentaById,
+    createEmpresaPuntoVenta,
+    updateEmpresaPuntoVenta,
+    deleteEmpresaPuntoVenta
+}

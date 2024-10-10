@@ -19,3 +19,12 @@ Considerar que cada empresa puede tener asociado varios usuarios y cada Punto de
 # Modelo relacional
 
 ![alt text](./Assets/MR.png)
+
+# Arquitectura
+
+![alt text](./Assets/Arquitectura.png)
+
+Se opto por una arquitectura de 3 capas dada su simplicidad y rapides de implementacion, donde se tiene una capa de presentación, una capa de negocio y una capa de datos. 
+
+# Detalles de implementación
+- No se uso un ORM como sequelize, se opto por usar el modulo mysql2 para la conexión a la base de datos, mas que nada por temas de tiempo.
