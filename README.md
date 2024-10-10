@@ -36,6 +36,8 @@ Se opto por una arquitectura de 3 capas dada su simplicidad y rapides de impleme
 # Detalles de implementación
 - No se uso un ORM como sequelize, se opto por usar el modulo mysql2 para la conexión a la base de datos, mas que nada por temas de tiempo.
 - Falto contenerizar la aplicacion.
+- Falto manejar mas excepciones, se controlo una que otra, sin embargo, faltaron muchas por controlar, causando runtime errors.
+- Se uso el modulo express para la creación de las rutas.
 
 
 # Tecnologias usadas
